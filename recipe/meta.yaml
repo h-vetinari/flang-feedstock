@@ -7,6 +7,11 @@ package:
 source:
   url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-{{ version.replace(".rc", "-rc") }}.tar.gz
   sha256: cd3b42caf8e78c497712a661303672c1a6279eb1a5ff8735488087319ab95214
+  patches:
+    - patches/0001-Instructions-for-building-a-functional-Flang-cross-c.patch
+    - patches/0002-Minimal-WASM-support-for-flang.patch
+    - patches/0003-Specialize-Flang-to-target-WASM.patch
+    - patches/0004-Patches-to-build-flang-runtime-with-emcc.patch
 
 build:
   number: 4
