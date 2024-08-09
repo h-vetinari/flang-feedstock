@@ -8,12 +8,15 @@ source:
   url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-{{ version.replace(".rc", "-rc") }}.tar.gz
   sha256: cd3b42caf8e78c497712a661303672c1a6279eb1a5ff8735488087319ab95214
   patches:
-    # from https://github.com/serge-sans-paille/llvm-project/tree/feature/flang-wasm
+    # From https://github.com/serge-sans-paille/llvm-project/tree/feature/flang-wasm
     - patches/0001-Instructions-for-building-a-functional-Flang-cross-c.patch
     - patches/0002-Minimal-WASM-support-for-flang.patch
     - patches/0003-Specialize-Flang-to-target-WASM.patch
+    # See https://github.com/llvm/llvm-project/pull/99465
     - patches/0004-Fix-implicit-conversion-warning-when-targeting-32bit.patch
+    # See https://github.com/llvm/llvm-project/pull/99822
     - patches/0005-Explicitly-convert-shift-value-to-SubscriptValue.patch
+    # See https://github.com/llvm/llvm-project/pull/101242
     - patches/0006-Handle-missing-definitions-in-cfenv.patch
     - patches/0007-Patches-to-build-flang-runtime-with-emcc.patch
 build:
